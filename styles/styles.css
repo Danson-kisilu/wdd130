@@ -79,7 +79,7 @@ footer {
 
 aside h2 {
     position: absolute;
-    top: 0px;
+    top: 013px;
     left: 80px;
 }
 
@@ -103,6 +103,11 @@ main {
 
 aside {
     width: 20rem;
+    margin: 1rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    background-color: #eee;
+    color: #000;
     position: relative;
     grid-column: 1/2;
     grid-row: 1/2;
