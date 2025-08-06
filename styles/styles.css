@@ -49,15 +49,12 @@ main img {
 
 }
 
-aside {
-    display: block;
-}
+
 
 aside img {
     width: 200px;
     height: auto;
 }
-
 p {
     padding: 10px;
 }
