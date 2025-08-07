@@ -1,10 +1,10 @@
 :root {
   --primary-color: #055a05;
-  --secondary-color: #f4a261; 
+  --secondary-color: #f4a261;
   --accent1-color: #264653;
   --accent2-color: #e9c46a;
-  --body-font: "Lato", sans-serif;
-  --heading-font: "Merriweather", serif;
+  --body-font: 'Lato', sans-serif;
+  --heading-font: 'Merriweather', serif;
 }
 
 * {
@@ -16,78 +16,101 @@
 body {
   font-family: var(--body-font);
   color: var(--accent1-color);
+  line-height: 1.6;
 }
 
 header {
   background-color: var(--primary-color);
   color: var(--accent2-color);
-}
- 
-header, main, footer{
-    width: 840px;
-    margin: 0 auto;
-}
-
-
-h1, h2{
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-    
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  flex-wrap: wrap;
 }
 
-nav, p, section, article {
-    margin: 16px;
-    padding: 8px;
+header img {
+  height: 60px;
 }
 
-.socialmedia a{
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
   text-decoration: none;
+  color: var(--accent2-color);
+  font-weight: bold;
 }
 
+main {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1, h2 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
 
 .hero {
   position: relative;
+  margin-bottom: 2rem;
 }
 
 .hero img {
-  display: block;
   width: 100%;
   height: auto;
+  display: block;
 }
 
-h1 {
+.hero h1 {
   position: absolute;
   top: 20px;
   width: 100%;
-  padding: 16px;
   text-align: center;
   background-color: var(--accent1-color);
-  color: #fff;
+  color: white;
+  padding: 0.5rem 0;
 }
 
 .hero article {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.85);
   padding: 1rem;
   max-width: 300px;
 }
 
 .hero article img {
   float: right;
-  width: 125px;
+  width: 100px;
   margin-left: 1rem;
 }
-nav {
+
+section {
+  margin-bottom: 2rem;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer .socialmedia {
+  margin-top: 0.5rem;
   display: flex;
+  justify-content: center;
   gap: 1rem;
 }
 
-
-footer {
-  margin: 1rem auto;
-  text-align: center;
+footer .socialmedia img {
+  width: 32px;
+  height: auto;
 }
-
-
