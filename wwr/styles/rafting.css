@@ -1,11 +1,13 @@
+/* background*/
 :root {
   --primary-color: #055a05;
   --secondary-color: #f4a261;
   --accent1-color: #264653;
   --accent2-color: #e9c46a;
-  --body-font: 'Lato', sans-serif;
-  --heading-font: 'Merriweather', serif;
+  --body-font: "Lato", sans-serif;
+  --heading-font: "Merriweather", serif;
 }
+
 
 * {
   margin: 0;
@@ -13,77 +15,72 @@
   box-sizing: border-box;
 }
 
+/* Base Styles */
 body {
   font-family: var(--body-font);
   color: var(--accent1-color);
   line-height: 1.6;
 }
 
+/* Header Grid Layout */
 header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
   background-color: var(--primary-color);
   color: var(--accent2-color);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 1rem;
-  flex-wrap: wrap;
 }
 
+/* Logo */
 header img {
-  height: 60px;
+  width: 80px;
+  height: auto;
 }
 
+/* Navigation */
 nav {
   display: flex;
-  gap: 1rem;
+  justify-content: flex-end;
+  gap: 1.5rem;
 }
 
 nav a {
-  text-decoration: none;
   color: var(--accent2-color);
+  text-decoration: none;
   font-weight: bold;
 }
 
-main {
-  max-width: 840px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-h1, h2 {
-  font-family: var(--heading-font);
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
+/* Hero Section */
 .hero {
   position: relative;
-  margin-bottom: 2rem;
 }
 
 .hero img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
 }
 
 .hero h1 {
   position: absolute;
   top: 20px;
   width: 100%;
+  padding: 1rem;
   text-align: center;
   background-color: var(--accent1-color);
-  color: white;
-  padding: 0.5rem 0;
+  color: #fff;
+  font-family: var(--heading-font);
 }
 
 .hero article {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 1rem;
   max-width: 300px;
+  border-radius: 5px;
 }
 
 .hero article img {
@@ -92,25 +89,70 @@ h1, h2 {
   margin-left: 1rem;
 }
 
-section {
-  margin-bottom: 2rem;
+/* Section Headings */
+h2 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-top: 2rem;
+  text-align: center;
 }
 
-footer {
-  background-color: var(--primary-color);
-  color: white;
+/* History Section */
+section p {
+  margin: 1rem auto;
+  max-width: 800px;
+  padding: 0 1rem;
   text-align: center;
+}
+
+/* Adventure Figures Layout */
+section figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  margin: 1rem;
+}
+
+section figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+section figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Adventure Gallery Flex Container */
+section:last-of-type {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
   padding: 1rem;
 }
 
-footer .socialmedia {
-  margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+/* Footer */
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--accent1-color);
+  color: #fff;
+  text-align: center;
+  position: relative;
 }
 
-footer .socialmedia img {
-  width: 32px;
-  height: auto;
+footer .socialmedia {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+footer .socialmedia a img {
+  width: 24px;
+  height: 24px;
 }
