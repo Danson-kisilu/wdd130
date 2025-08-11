@@ -1,3 +1,4 @@
+/* background*/
 :root {
   --primary-color: #055a05;
   --secondary-color: #f4a261;
@@ -13,26 +14,30 @@
   box-sizing: border-box;
 }
 
+/* Base Styles */
 body {
   font-family: var(--body-font);
   color: var(--accent1-color);
   line-height: 1.6;
 }
 
-/* Header */
+/* Header Grid Layout */
 header {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
   background-color: var(--primary-color);
+  color: var(--accent2-color);
   padding: 1rem;
 }
 
+/* Logo */
 header img {
   width: 80px;
   height: auto;
 }
 
+/* Navigation */
 nav {
   display: flex;
   justify-content: flex-end;
@@ -43,21 +48,6 @@ nav a {
   color: var(--accent2-color);
   text-decoration: none;
   font-weight: bold;
-  padding: 0.5rem;
-  transition: background 0.3s, color 0.3s;
-}
-
-nav a:hover {
-  background-color: var(--secondary-color);
-  color: #fff;
-  border-radius: 4px;
-}
-
-/* Active link styling */
-nav a.active {
-  background-color: var(--secondary-color);
-  color: #fff;
-  border-radius: 4px;
 }
 
 /* Hero Section */
@@ -66,9 +56,9 @@ nav a.active {
 }
 
 .hero img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
 }
 
 .hero h1 {
@@ -98,7 +88,7 @@ nav a.active {
   margin-left: 1rem;
 }
 
-/* Headings */
+/* Section Headings */
 h2 {
   font-family: var(--heading-font);
   color: var(--primary-color);
@@ -106,7 +96,7 @@ h2 {
   text-align: center;
 }
 
-/* Paragraphs */
+/* History Section */
 section p {
   margin: 1rem auto;
   max-width: 800px;
@@ -114,7 +104,71 @@ section p {
   text-align: center;
 }
 
-/* Figures */
+/* Adventure Figures Layout */
+section figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  margin: 1rem;
+}
+
+section figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+section figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Adventure Gallery Flex Container */
+section:last-of-type {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--accent1-color);
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+footer .socialmedia {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+footer .socialmedia a img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Contact Page Map Styling */
+iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  border: none;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Employee Section */
 section figure {
   display: inline-block;
   width: 250px;
@@ -125,7 +179,7 @@ section figure {
 section figure img {
   width: 100%;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 section figure figcaption {
@@ -134,74 +188,64 @@ section figure figcaption {
   color: #555;
 }
 
-/* Map */
-iframe {
-  width: 100%;
-  max-width: 800px;
-  height: 400px;
-  border: none;
-  display: block;
-  margin: 1rem auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Form */
+/* CONTACT FORM STYLES */
 form {
-  max-width: 600px;
+  max-width: 650px;
   margin: 2rem auto;
-  padding: 1rem;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border: 1px solid rgb(0 0 0 / 0.1);
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
+  display: grid;
+  gap: 1rem;
+  font-family: var(--body-font);
 }
 
-form label {
+/* Headings inside form */
+form h2 {
+  text-align:center;
+  color: var(--primary-color);
+  font-family: var(--heading-font);
+}
+
+/* Labels */
+label {
   font-weight: bold;
-  display: block;
-  margin-top: 0.5rem;
+  color: var(--accent1-color);
+  margin-bottom: 0.25rem;
 }
 
-form input,
-form textarea {
+/* Inputs, textareas */
+input[type="text"],
+input[type="email"],
+textarea {
   width: 100%;
   padding: 0.5rem;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 1rem;
+  font-family: var(--body-font);
 }
 
-form button {
-  background: #0077cc;
+/* Radio and checkbox alignment */
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+/* Button styling */
+button[type="submit"] {
+  background: var(--primary-color);
   color: white;
   border: none;
+  border-radius: 0.5rem;
   padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-form button:hover {
-  background: #005fa3;
-}
-
-/* Footer */
-footer {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: var(--accent1-color);
-  color: #fff;
-  text-align: center;
-}
-
-footer .socialmedia {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-footer .socialmedia a img {
-  width: 24px;
-  height: 24px;
+button[type="submit"]:hover {
+  background: #034803;
 }
